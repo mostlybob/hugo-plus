@@ -26,6 +26,8 @@ Defined within `data/section/<section_name>.toml`
 	* framework - (not implemented)
 	* layout - (not implemented)
 	* css_theme - (not implemented)
+	* is_taxonomy - If the section is also a taxonomy. Also section to contain
+		content, and display page aggregation. See `taxonomy` data object.
 	* group_by_year - (not implemented)
 	* continue_message - Customize the message after the summary to invite
 			users to the full post. Ex: "Continue Reading" or "Read full story"
@@ -35,31 +37,35 @@ The `contents` contains all of the components which can be enabled/disabled
 	They are all disabled by default.
 Note, the Content's front matter supports a subset of the parameters for componets.
 This allows Content to override some of Section's components settings.
-	* componentdate - Enable/disable the date within the content's meta section
-	* componentauthor - Enable/disable the author's name within the content's meta section
-	* componentseries - Enable/disable the series' name within the content's meta section
-	* componentshare_buttons - Enable/disable the share buttons for the article
-	* componentfollow_buttons - Enable/disable the follow buttons for the author or project
-	* component.categories - Enable/disable the categories that the content belongs to
-	* component.tags - Enable/disable the tags that the content belongs to
-	* component.pager - Enable/disable the buttons for the next and previous content
-	* component.comments - Enable/disable the comments section for the component
+	* components.date - Enable/disable the date within the content's meta section
+	* components.author - Enable/disable the author's name within the content's meta section
+	* components.series - Enable/disable the series' name within the content's meta section
+	* components.share_buttons - Enable/disable the share buttons for the article
+	* components.follow_buttons - Enable/disable the follow buttons for the author or project
+	* components.categories - Enable/disable the categories that the content belongs to
+	* components.tags - Enable/disable the tags that the content belongs to
+	* components.pager - Enable/disable the buttons for the next and previous content
+	* components.comments - Enable/disable the comments section for the component
 			Can also be defined in the content's front matter for more fine-grained control.
-	* component.breadcrumbs - Enable/disable breadcrumbs showing the path to the current page
-	* component.navbar - todo
-	* component.carousel - Shows a carousel defined within the content or section.
+	* components.breadcrumbs - Enable/disable breadcrumbs showing the path to the current page
+	* components.carousel - Shows a carousel defined within the content or section.
 			See [Carousel's Parameters](carousel.md).
 			Setting can be overridden by content
-	* component.jumbotron - Shows a jumbotron defined within the content or section.
+	* components.jumbotron - Shows a jumbotron defined within the content or section.
 			See [Jumbotron's Parameters](jumbotron.md).
 			Setting can be overridden by content
-	* component.page_header - Enable/disable the title of the page above the
-			component This is not shown on content pages.
-	* component.sidebar - todo
-	* component.footer - todo
-	
+	* components.page_header - Enable/disable the title of the page above the
+			component. Note, this is not shown on content pages.
+	* components.navbar - todo
+	* components.sidebar - todo
+	* components.footer - todo
+
 Comments parameters:
 	* comments.on_demand - Don't autoload the comments when the page is loaded
+
+Taxonomy paramters:
+	* taxonomy.show_pages - 
+	* taxonomy.show_pages - 
 
 
 # Content Parameters
@@ -82,11 +88,12 @@ A file is a piece of content if it is stored within the `content/` folder.
 		software, people, rest
 	* continue_message - Customize the message after the summary to invite
 			users to the full post. Ex: "Continue Reading" or "Read full story"
-	* componentcomments - Enable/Disable the comments section for this post
-	* component.carousel - Shows a carousel defined within the content or section.
+	* components.comments - Enable/Disable the comments section for this post
+	* components.carousel - Shows a carousel defined within the content or section.
 			See [Carousel's Parameters](carousel.md)
-	* component.jumbotron - Shows a jumbotron defined within the content or section.
+	* components.jumbotron - Shows a jumbotron defined within the content or section.
 			See [Jumbotron's Parameters](jumbotron.md)
+
 
 # Author Parameters
 Defined within the `content/author/<author-name>.md` file's front matter.
@@ -99,7 +106,7 @@ Author files are also content files, and so they support those parameters too.
 	* gender - Author's gender. (used for OpenGraph metadata)
 	* job_title - Author's job title. (used for OpenGraph metadata)
 	* website - Link to Author's website
-	* componentauthor_thumbnail - Shows thumbnail in the content area
+	* components.author_thumbnail - Shows thumbnail in the content area
 **The following are the supported social profiles and should be set to your username:**
 	* twitter, instagram, github, bitbucket, stackoverflow, linkedin, facebook,
 		vimeo, twitch, hitbox, slack, gratipay, flattr, googleplus, pinterest, youtube
